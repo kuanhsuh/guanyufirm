@@ -1,12 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=s, initial-scale=1.0" />
+    <title>Quan Yu Firms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <link href="./tailwind-prod.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+
+
+    <!-- Global site tag (gtag.js) - Google Ads: 815347962 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-815347962"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-815347962');
+
+    </script>
 </head>
-<body>
-    Hello World
+
+<body class="text-gray-700 font-sans">
+    <nav x-data="{ open: false }" class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="sm:w-full flex justify-between">
+                    <div class="flex-shrink-0 flex items-center text-2xl">
+                        <img src="https://via.placeholder.com/40x40" alt="" class="w-100 mr-2">
+                        GuanYu Firm
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex">
+                        <a href="#jumbotron" class="nav-link">
+                            Home
+                        </a>
+                        <a href="#about" class="ml-8 nav-link">
+                            About
+                        </a>
+                        <a href="#services" class="ml-8 nav-link">
+                            Services
+                        </a>
+                        <a href="#contact" class="ml-8 nav-link">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="ml-auto sm:hidden text-white">
+                    <a class="bg-teal-500 rounded py-2 px-4 flex" href="tel:073709626">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            class="h-6 w-6 fill-current text-teal-300">
+                            <path class="heroicon-ui"
+                                d="M13.04 14.69l1.07-2.14a1 1 0 011.2-.5l6 2A1 1 0 0122 15v5a2 2 0 01-2 2h-2A16 16 0 012 6V4c0-1.1.9-2 2-2h5a1 1 0 01.95.68l2 6a1 1 0 01-.5 1.21L9.3 10.96a10.05 10.05 0 003.73 3.73zM8.28 4H4v2a14 14 0 0014 14h2v-4.28l-4.5-1.5-1.12 2.26a1 1 0 01-1.3.46 12.04 12.04 0 01-6.02-6.01 1 1 0 01.46-1.3l2.26-1.14L8.28 4z" />
+                        </svg>
+                        即時來電
+                    </a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button @click="open = !open"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                            <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div :class="{'block': open, 'hidden': !open}" class="hidden sm:hidden">
+            <div class="pt-2 pb-3">
+                <a href="#jumbotron"
+                    class="block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out">首頁</a>
+                <a href="#environment" class="sm-nav-link">環境</a>
+                <a href="#exterior" class="sm-nav-link">外觀</a>
+                <a href="#interior" class="sm-nav-link">室內</a>
+                <a href="#introduction" class="sm-nav-link">建案介紹</a>
+                <a href="#map" class="sm-nav-link">地圖</a>
+                <a href="#contact-form" class="sm-nav-link">聯絡表格</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 導覽列 -->
+    <!-- 首頁大圖 -->
+    <header id="jumbotron">
+        <div class="header-bg-img relative">
+            <div class="text-container ">
+                <!-- <h1>石琳圓山</h1> -->
+                <p class="text-base leading-8 w-4/5 sm:w-3/5 mx-auto">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, dicta, voluptas neque illum molestias voluptate ab non cupiditate praesentium quod voluptatum optio nemo voluptatem esse amet enim molestiae provident.
+                </p>
+            </div>
+        </div>
+    </header>
+    <!-- 環境介紹 -->
+    <section id="environment" class="bg-blue-100">
+        <h2 class="text-center text-3xl font-medium mb-4">
+            About Us
+        </h2>
+        <p class="mb-8 text-center max-w-3xl mx-auto leading-8">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ab deserunt aliquam molestiae, veniam quibusdam amet fuga qui in et? Ab illum, maxime voluptatum repudiandae quod sit ipsum nesciunt odit molestias esse saepe totam natus aliquid quae repellat obcaecati eos corrupti doloremque ut ullam commodi repellendus nisi iusto quia. Facilis ex id deserunt pariatur delectus vel, accusamus aut minus consequuntur laborum vero laboriosam sapiente vitae sint necessitatibus reiciendis earum rerum a quas aliquam ipsum repellat nisi? Tempora, velit. Eos accusantium aperiam autem odio officiis esse veniam magni corporis unde consequuntur! Sunt ratione suscipit placeat corporis quos odit quidem nulla id?
+        </p>
+    </section>
+    <!-- 外觀 -->
+    <section id="services" class="bg-teal-100">
+        <h2 class="text-center text-3xl font-medium">
+            Services
+        </h2>
+        <p class="mb-8 text-xs text-center">
+            We export top quality products
+        </p>
+
+        <!-- Set up your HTML -->
+        <div class="owl-carousel owl-theme max-w-3xl mx-auto">
+            <div>
+                <img src="https://via.placeholder.com/300x200" class="w-full rounded" alt="" />
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/300x200" class="w-full rounded" alt="" />
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/300x200" class="w-full rounded" alt="" />
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/300x200" class="w-full rounded" alt="" />
+            </div>
+        </div>
+    </section>
+    <!-- 地圖 -->
+    <section id="map" class="">
+        <h2 class="text-center text-3xl mb-4 font-medium">
+            Contact Us
+        </h2>
+
+        <div class="flex justify-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.3812997954938!2d120.32774615070316!3d22.63956788507553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04c5082220e9%3A0x48f437a7ded79207!2zODA36auY6ZuE5biC5LiJ5rCR5Y2A6Iel6b6N6LevODHomZ8!5e0!3m2!1szh-TW!2stw!4v1618972967316!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="flex justify-center mt-4">
+        <ul>
+            <li>Address: 2F., No. 81, Wolong Rd., Sanmin Dist. <br/>
+                Kaohsiung City 807 , Taiwan (R.O.C.)</li>
+            <li>Phone: 0937197505</li>
+            <li>Email: guanyufirm@gmail.com</li>
+        </ul>
+    </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                center: true,
+                items: 1,
+                loop: true,
+                margin: 10,
+                // nav: true,
+                dots: true,
+            });
+        });
+
+    </script>
 </body>
+
 </html>
